@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleResponsive.css">
+    <title>Template</title>
+</head>
+<body class="flex-display flex-column">
+
+    <header class="background-gradient flex-display" >
+        <div>
+            <span class="cursor-pointer">LOGO</span>
+            <span id="portFolioMenu" class="cursor-pointer">My Portfolio</span>
+            <span class="cursor-pointer">New</span>
+        </div>
+        <div id="nav-options">
+            <!--<ul class="openOptions">
+                <li>EN <span class="plusSymbol">+</span>            
+                    <ul>
+                        <li>SP</li>
+                        <li>PT</li>
+                    </ul>
+                </li>
+            </ul>-->
+            <div class="dropdown">
+                <span class="dropbtn" onclick="myFunction('myDropdown')">EN</span>
+                <!--<button onclick="myFunction('myDropdown')" class="dropbtn">EN<span class="plusSymbol">+</span> </button>-->
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">SP</a>
+                    <a href="#">PT</a>                    
+                </div>
+            </div>
+
+            <div style="display: flex; align-items:center;">
+                <img src="../imgs/userFoto.png" alt="" style="margin-right:0">
+                <div class="dropdown">
+                    <span onclick="myFunction('myDropdown2')" class="plusSymbol dropbtn">Username +</span>
+                    <!--<button onclick="myFunction('myDropdown2')" class="dropbtn">Username <span class="plusSymbol">+</span></button>-->
+                    <div id="myDropdown2" class="dropdown-content">
+                        <a href="#">Logout</a>
+                        <a href="#">Setting</a>                    
+                    </div>
+                </div>
+            </div>
+
+           
+            <!--<ul>
+                <li>Username <span class="plusSymbol">+</span>            
+                    <ul>
+                        <li>Logout</li>
+                        <li>Setting</li>
+                    </ul>
+                </li> 
+            </ul>-->
+        </div>       
+    </header>
+
+    <section class="main-workspace">
+        <h1>My Portfolio</h1>
+
+        <div id="content-templates">
+
+            <div class="box-template">                
+                <div class="line-box-template"></div>
+                <span>Select a new Template</span>
+                <div class="btnSelectTemplate background-gradient">
+                    new
+                </div>
+            </div>
+            
+            <div class="box-template">                
+                <div class="line-box-template"></div>
+                <span>Select a new Template</span>
+                <div class="btnSelectTemplate background-gradient">
+                    new
+                </div>
+            </div>
+
+            
+            <div class="box-template">                
+                <div class="line-box-template"></div>
+                <span>Select a new Template</span>
+                <div class="btnSelectTemplate background-gradient">
+                    new
+                </div>
+            </div>
+            
+            <div class="box-template">                
+                <div class="line-box-template"></div>
+                <span>Select a new Template</span>
+                <div class="btnSelectTemplate background-gradient">
+                    new
+                </div>
+            </div>
+
+            <div class="box-template">                
+                    <div class="line-box-template"></div>
+                    <span>Select a new Template</span>
+                    <div class="btnSelectTemplate background-gradient">
+                        new
+                    </div>
+                </div>
+                
+                <div class="box-template">                
+                    <div class="line-box-template"></div>
+                    <span>Select a new Template</span>
+                    <div class="btnSelectTemplate background-gradient">
+                        new
+                    </div>
+                </div>
+        </div>
+
+    </section>
+
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        let tempMenuOpen = '';
+        function myFunction(id) {             
+            document.getElementById(id).classList.toggle("show");                        
+            if (tempMenuOpen) {   
+                if (tempMenuOpen !== id) {                    
+                    document.getElementById(tempMenuOpen).classList.remove('show'); 
+                    tempMenuOpen = id;
+                } 
+            } else{
+                tempMenuOpen = id;
+            }
+        }        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                let dropdowns = document.getElementsByClassName("dropdown-content");
+                let i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>

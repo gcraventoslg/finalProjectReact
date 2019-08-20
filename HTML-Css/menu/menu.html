@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/newstyle.css">
+    
+    <title>Template</title>
+</head>
+<body>
+
+    <header class="background-gradient" >
+        <span>LOGO</span>
+
+        <div class="main-options-menu">
+
+            <a href="">My Portfolio</a>
+            <a href="">New</a>            
+            
+            <div class="dropdown">
+                <span onclick="myFunction('myDropdown')" class="plusSymbol dropbtn">EN +</span>            
+                <div id="myDropdown" class="dropdown-content" style="border: 1px solid black" >
+                    <a href="#">SP</a>
+                    <a href="#">PT</a>                    
+                </div>
+            </div>
+            <div class="dropdown">
+                <img src="../imgs/userFoto.png" alt="" style="float:left; margin-right:10px">
+                <span onclick="myFunction('myDropdown2')" class="plusSymbol dropbtn">Username +</span>            
+                <div id="myDropdown2" class="dropdown-content">
+                    <a href="#">Logout</a>
+                    <a href="#">Setting</a>                    
+                </div>
+            </div>
+
+        </div>
+               
+    </header>
+
+   
+
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        let tempMenuOpen = '';
+        function myFunction(id) {     
+            console.log(id);          
+            document.getElementById(id).classList.toggle("show");                        
+            if (tempMenuOpen) {   
+                if (tempMenuOpen !== id) {                    
+                    document.getElementById(tempMenuOpen).classList.remove('show'); 
+                    tempMenuOpen = id;
+                } 
+            } else{
+                tempMenuOpen = id;
+            }
+        }        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                let dropdowns = document.getElementsByClassName("dropdown-content");
+                let i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,77 @@
+body, div, form,ul,h1,nav,header {
+    margin: 0;
+    padding: 0;    
+}
+
+header {
+    width: auto;
+    height: auto;
+    padding: 30px 90px;
+    display: flex; 
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 20px; 
+}
+
+.main-options-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-options-menu > * {
+    margin-right: 40px;
+}
+
+header > div > div:last-child(),.main-options-menu:last-child{
+    background: red;    
+}
+
+header span:hover,header div > span:hover, header a:hover {
+    cursor: pointer;
+}
+
+header a:nth-child(2) {
+    color:black;
+    margin-left:0px;
+}
+
+header a{
+    color: white; 
+}
+
+
+header a {
+    text-decoration: none;
+}
+
+.dropdown-content{
+   display: none;
+}
+
+.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;    
+}
+
+@media only screen {
+    @media (max-width: 768px) {
+      body {
+        background-color: yellow;
+      }
+
+      header, .main-options-menu {
+          flex-direction: column;
+      }
+
+      .show {
+            display: flex;
+            flex-direction: column;        
+        }
+    }
+}
+
+.background-gradient {    
+    background: radial-gradient(ellipse at left, #7466C9,#7466C9, #7466C9,#686DCB,#4B7CD1 100%);
+}
